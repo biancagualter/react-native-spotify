@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons,  Entypo, EvilIcons, MaterialCommunityIcons, Feather} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -19,17 +19,38 @@ export default function BottomTabNavigator() {
       initialRouteName="TabOne"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="Início"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <Entypo name="home" size={30}  color={color} style={{ marginBottom: -3 }}/>,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Navegar"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons name="albums-outline"size={30}  color={color} style={{ marginBottom: -3 }}/>,
+        }}
+      />
+      <BottomTab.Screen
+        name="Buscar"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <EvilIcons name="search" size={30} color={color} style={{ marginBottom: -3 }}/>,
+        }}
+      />
+      <BottomTab.Screen
+        name="Radio"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <Feather name="radio" size={30} color={color} style={{ marginBottom: -3 }}/>,
+        }}
+      />
+      <BottomTab.Screen
+        name="Sua Biblioteca"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="bookshelf" size={30} color={color} style={{ marginBottom: -3 }}/>,
         }}
       />
     </BottomTab.Navigator>
