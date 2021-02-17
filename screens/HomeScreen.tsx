@@ -1,12 +1,18 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-import { Text, View } from '../components/Themed';
+import Album from '../components/album/index'
+
+const album = {
+  id:'1',
+  imageUri: 'https://google.com',
+  artistsHeadline: 'Lady Gaga, Cardi B, Ariana Grande, Martin Garrix'
+}
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text>Hello Home</Text>
+      <Album album={album} />
     </View>
   );
 }
