@@ -1,4 +1,4 @@
-import { Ionicons,  Entypo, EvilIcons, MaterialCommunityIcons, Feather} from '@expo/vector-icons';
+import { Ionicons,  Entypo, EvilIcons, MaterialCommunityIcons} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -27,24 +27,10 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Navegar"
-        component={TabTwoNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <Ionicons name="albums-outline"size={30}  color={color} style={{ marginBottom: -3 }}/>,
-        }}
-      />
-      <BottomTab.Screen
         name="Buscar"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <EvilIcons name="search" size={30} color={color} style={{ marginBottom: -3 }}/>,
-        }}
-      />
-      <BottomTab.Screen
-        name="Radio"
-        component={TabTwoNavigator}
-        options={{
-          tabBarIcon: ({ color }) => <Feather name="radio" size={30} color={color} style={{ marginBottom: -3 }}/>,
         }}
       />
       <BottomTab.Screen
