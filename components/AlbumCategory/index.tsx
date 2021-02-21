@@ -6,7 +6,7 @@ import AlbumComponent from '../Album'
 
 export type AlbumCategoryProps = {
     title: string;
-    albums: AlbumData[]
+    albums: AlbumData[] 
 }
 
 const AlbumCategory = (props: AlbumCategoryProps) => {

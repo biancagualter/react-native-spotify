@@ -1,39 +1,22 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import AlbumCategory from '../components/AlbumCategory'
-
-const albumCategory = {
-  id:'1',
-  title: 'Dance',
-  albumsData: [
-    {
-      id: '1',
-      imageUri: 'http://sportplaylists.com/wp-content/uploads/2017/05/79001a86998ccf89637309570d3dc45c196b2f3d.jpeg',
-      artistsHeadline: 'Lady Gaga, Cardi B, Ariana Grande, Martin Garrix'
-    },
-    {
-      id: '2',
-      imageUri: 'http://sportplaylists.com/wp-content/uploads/2017/05/79001a86998ccf89637309570d3dc45c196b2f3d.jpeg',
-      artistsHeadline: 'Lady Gaga, Cardi B, Ariana Grande, Martin Garrix'
-    },
-    {
-      id: '3',
-      imageUri: 'http://sportplaylists.com/wp-content/uploads/2017/05/79001a86998ccf89637309570d3dc45c196b2f3d.jpeg',
-      artistsHeadline: 'Lady Gaga, Cardi B, Ariana Grande, Martin Garrix'
-    },
-    {
-      id: '4',
-      imageUri: 'http://sportplaylists.com/wp-content/uploads/2017/05/79001a86998ccf89637309570d3dc45c196b2f3d.jpeg',
-      artistsHeadline: 'Lady Gaga, Cardi B, Ariana Grande, Martin Garrix'
-    }
-  ]
-}
+import albumCategories from '../data/albumCategories'
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <AlbumCategory title={albumCategory.title} albums={albumCategory.albumsData} />
+      <FlatList 
+        data={albumCategories}
+        renderItem={({ item }) => (
+          <AlbumCategory 
+            title={item.title} 
+            albums={item.albumsData}
+          />
+        )}
+        keyExtractor={( item ) => item.id}
+      />
     </View>
   );
 }
