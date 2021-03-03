@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, FlatList } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import albumDetails from '../data/albumDetails'
 import SongList from '../components/SongList'

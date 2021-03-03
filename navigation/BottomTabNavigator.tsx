@@ -24,7 +24,7 @@ export default function BottomTabNavigator() {
         name="Início"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <Entypo name="home" size={30}  color={color} style={{ marginBottom: -3 }}/>,
+          tabBarIcon: ({ color }) => <Entypo name="home" size={25}  color={color} style={{ marginBottom: -3 }}/>,
         }}
       />
       <BottomTab.Screen
